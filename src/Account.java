@@ -61,6 +61,19 @@ public class Account {
 	}
 	
 	public void withdrawMoneyS() {
+		if(this.savingBalance<=0){
+			System.out.println("You have insufficient funds to withdraw.");
+		}else{
+			System.out.print("Enter the amount you want to withdraw: ");
+			double amount=scanner.nextDouble();
+			if(this.savingBalance-amount<0){
+				System.out.println("You have insufficient funds to withdraw.");	
+			}else{
+				this.savingBalance-=amount;
+				System.out.println("You have successfullu withdrawn "+amount+" from your account.");
+				System.out.println("Your new balance is: "+this.savingBalance+"\n");
+			}
+		}
 		
 	}
 	

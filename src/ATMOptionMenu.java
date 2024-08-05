@@ -64,14 +64,16 @@ public class ATMOptionMenu extends Account {
 	}
 
 	public void getChecking() {
-		System.out.println("\nChecking Accoount");
+		int checkingres;
+		do{
+		System.out.println("\nChecking Account");
 		System.out.println("Press 1 for View Balance");
 		System.out.println("Press 2 for Withdraw Funds");
 		System.out.println("Press 3 for Deposit Funds");
 		System.out.println("Press 4 to exit");
 		System.out.print("Choice : ");
 
-		int checkingres = scanner.nextInt();
+		checkingres = scanner.nextInt();
 
 		switch (checkingres) {
 			case 1:
@@ -90,10 +92,13 @@ public class ATMOptionMenu extends Account {
 				System.out.println("Invalid Choice.");
 
 		}
+	}while(checkingres!=4);
+
 	}
 
 	public void getSaving() {
-
+		int savingres;
+		do{
 		System.out.println("\nSavings Accoount");
 		System.out.println("Press 1 for View Balance");
 		System.out.println("Press 2 for Withdraw Funds");
@@ -101,9 +106,9 @@ public class ATMOptionMenu extends Account {
 		System.out.println("Press 4 to exit");
 		System.out.print("Choice : ");
 
-		int checkingres = scanner.nextInt();
+		savingres = scanner.nextInt();
 
-		switch (checkingres) {
+		switch (savingres) {
 			case 1:
 				viewBalanceS();
 				break;
@@ -120,6 +125,7 @@ public class ATMOptionMenu extends Account {
 				System.out.println("Invalid Choice.");
 
 		}
+	}while(savingres!=4);
 
 	}
 
