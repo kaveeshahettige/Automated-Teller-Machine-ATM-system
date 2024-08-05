@@ -1,5 +1,7 @@
+import java.util.Scanner;
 
 public class Account {
+	Scanner scanner=new Scanner(System.in);
 
 	private int accountNumber;
 	private int pinNumber;
@@ -28,8 +30,21 @@ public class Account {
 	}
 	
 	public void withdrawMoneyC() {
-		
-		
+
+		if(this.checkingBalance<=0){
+			System.out.println("You have insufficient funds to withdraw.");
+		}else{
+			System.out.print("Enter the amount you want to withdraw: ");
+			double amount=scanner.nextDouble();
+			if(this.checkingBalance-amount<0){
+				System.out.println("You have insufficient funds to withdraw.");	
+			}else{
+				this.checkingBalance-=amount;
+				System.out.println("You have successfullu withdrawn "+amount+" from your account.");
+				System.out.println("Your new balance is: "+this.checkingBalance);
+			}
+
+		}	
 	}
 	
 	public void depositMoneyC() {
