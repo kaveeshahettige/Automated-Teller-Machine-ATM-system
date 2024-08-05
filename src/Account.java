@@ -41,14 +41,19 @@ public class Account {
 			}else{
 				this.checkingBalance-=amount;
 				System.out.println("You have successfullu withdrawn "+amount+" from your account.");
-				System.out.println("Your new balance is: "+this.checkingBalance);
+				System.out.println("Your new balance is: "+this.checkingBalance+"\n");
 			}
 
 		}	
 	}
 	
 	public void depositMoneyC() {
-		
+
+		System.out.print("Enter the amount you want to deposit: ");
+		double amount=scanner.nextDouble();
+		this.checkingBalance+=amount;
+		System.out.println("You have successfully deposited "+amount+" to your account.");
+		System.out.println("Your current account balance is "+this.checkingBalance+" .\n");
 	}
 	
 	public void viewBalanceS() {
@@ -60,6 +65,11 @@ public class Account {
 	}
 	
 	public void depositMoneyS() {
+		System.out.print("Enter the amount you want to deposit: ");
+		double amount=scanner.nextDouble();
+		this.savingBalance+=amount;
+		System.out.println("You have successfully deposited "+amount+" to your account.");
+		System.out.println("Your savings account balance is "+this.savingBalance+" .\n");
 		
 	}
 	
